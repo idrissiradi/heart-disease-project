@@ -10,6 +10,10 @@ This project is designed for educational purposes to practice data analysis, vis
 
 The project uses `heart-disease.csv` containing medical and demographic features to predict the presence of heart disease.
 
+The original data came from the Cleveland database from UCI Machine Learning Repository.
+
+Howevever, I've downloaded it in a formatted way from Kaggle.
+
 ## Technologies Used
 
 - **Python 3.x**
