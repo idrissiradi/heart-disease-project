@@ -1,46 +1,96 @@
-# Heart Disease Classification Project
-
-A learning project focused on predicting heart disease using machine learning techniques.
-
-## About
-
-This project is designed for educational purposes to practice data analysis, visualization, and machine learning classification. It uses a heart disease dataset to build and evaluate predictive models.
-
+# Heart Disease Classification — End-to-End ML Project
+ 
+Binary classification project predicting the presence of heart disease from clinical data. Compares three classifiers, applies hyperparameter tuning with `RandomizedSearchCV` and `GridSearchCV`, and evaluates final model performance with cross-validation and feature importance analysis.
+ 
+---
+ 
+## Results
+ 
+### Model Comparison (Test Set Accuracy)
+ 
+| Model | Test Accuracy |
+|---|---|
+| Logistic Regression | **88.52%** ✓ best |
+| Random Forest | 86.89% |
+| K-Nearest Neighbors | 75.41% |
+ 
+### Best Model — Logistic Regression (5-Fold Cross-Validation)
+ 
+| Metric | Score |
+|---|---|
+| Precision | 82.08% |
+| Recall | 92.12% |
+| F1 Score | 86.73% |
+  
+---
+ 
+## Pipeline
+ 
+```
+heart-disease.csv
+      │
+      ▼
+EDA & Visualization
+  · Class distribution
+  · Feature correlations (heatmap)
+  · Clinical feature analysis
+      │
+      ▼
+Preprocessing
+  · Train/test split (stratified)
+  · Feature scaling
+      │
+      ▼
+Model Comparison
+  · LogisticRegression
+  · KNeighborsClassifier  (best k search)
+  · RandomForestClassifier
+      │
+      ▼
+Hyperparameter Tuning
+  · RandomizedSearchCV  (broad search)
+  · GridSearchCV        (fine-tuned search)
+      │
+      ▼
+Evaluation
+  · Confusion matrix
+  · Classification report (precision / recall / F1)
+  · ROC Curve
+  · 5-fold cross-validation
+  · Feature importance (Random Forest)
+```
+ 
+---
+ 
 ## Dataset
-
-The project uses `heart-disease.csv` containing medical and demographic features to predict the presence of heart disease.
-
-The original data came from the Cleveland database from UCI Machine Learning Repository.
-
-Howevever, I've downloaded it in a formatted way from Kaggle.
-
-## Technologies Used
-
-- **Python 3.x**
-- **Data Analysis**: NumPy, Pandas
-- **Visualization**: Matplotlib, Seaborn
-- **Machine Learning**: Scikit-learn
-- **Development**: Jupyter Notebook
-
+ 
+[Cleveland Heart Disease — UCI / Kaggle](https://www.kaggle.com/datasets/cherngs/heart-disease-cleveland-uci)
+ 
+- 303 patient records, 14 features
+- Target: `target` — 0 (no disease), 1 (disease present)
+- Features: age, sex, chest pain type, resting BP, cholesterol, fasting blood sugar, ECG results, max heart rate, exercise-induced angina, ST depression, slope, vessels, thalassemia
+ 
+---
+ 
+## Stack
+ 
+- **Python 3.x**, Jupyter Notebook
+- **scikit-learn** — LogisticRegression, KNeighborsClassifier, RandomForestClassifier, RandomizedSearchCV, GridSearchCV, cross_val_score
+- **pandas / NumPy** — data manipulation
+- **Matplotlib / Seaborn** — EDA visualization, ROC curve, confusion matrix, feature importance
+ 
+---
+ 
 ## Setup
-
-1. Clone the repository
-2. Create a virtual environment (optional but recommended):
-   ```bash
-   python -m venv env
-   source env/bin/activate  # On Linux/Mac
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-Open and run the Jupyter notebook:
+ 
 ```bash
+git clone https://github.com/idrissiradi/heart-disease-project
+cd heart-disease-project
+pip install -r requirements.txt
 jupyter notebook end-to-end-heart-disease-classification.ipynb
 ```
+ 
+---
 
 ## Project Structure
 
@@ -52,14 +102,6 @@ heart-disease-project/
 └── README.md                                       # This file
 ```
 
-## Learning Goals
-
-- Exploratory Data Analysis (EDA)
-- Data preprocessing and feature engineering
-- Model training and evaluation
-- Understanding classification metrics
-- Hyperparameter tuning
-
-## License
+---
 
 This is a learning project for educational purposes.
